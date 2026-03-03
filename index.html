@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>С любовью..</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         * {
             margin: 0;
@@ -204,12 +205,14 @@
         }
 
         .gradient-text p {
-            background: linear-gradient(135deg, #dd00fa, #ffb4f3);
+            background: linear-gradient(135deg, #b000c7, #ffbdf4);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             margin: 5px 0;
-            text-shadow: 0 0 15px rgba(250, 150, 200, 0.5);
+            position: relative;
+            /* Контур через несколько теней */
+            text-shadow: 0 0 12px rgba(236, 23, 255, 0.4);
         }
 
         /* ===== ТАЙМЕР (УВЕЛИЧЕН) ===== */
@@ -725,7 +728,7 @@
     <script>
 (function() {
     // ===== НАСТРОЙКИ =====
-    const START_DATE = new Date(2026, 0, 31, 18, 0, 0);
+    const START_DATE = new Date(2026, 0, 31, 17, 30, 0);
     const PHOTOS = [
         'Love.jpg',
         '1.jpg',
