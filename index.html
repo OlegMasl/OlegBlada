@@ -35,131 +35,6 @@
             justify-content: center;
         }
 
-        /* ===== СЕРДЦЕ ===== */
-        .heart-wrapper {
-            position: relative;
-            width: min(200px, 40vw);
-            height: min(200px, 40vw);
-            margin: min(30px, 5vw) auto min(40px, 6vw);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            filter: drop-shadow(0 0 15px rgba(255, 50, 100, 0.5));
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .heart-wrapper:active {
-            transform: scale(0.95);
-        }
-
-        .pulse-heart {
-            width: min(140px, 28vw);
-            height: min(130px, 26vw);
-            background: linear-gradient(145deg, #ff1744, #ff1744);
-            transform: rotate(-45deg);
-            border-radius: 0 0 20px 0;
-            position: relative;
-            z-index: 5;
-            box-shadow: 0 10px 30px rgba(255, 30, 80, 0.6);
-            animation: doubleBeat 1.2s infinite cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .pulse-heart::before,
-        .pulse-heart::after {
-            content: '';
-            position: absolute;
-            width: min(140px, 28vw);
-            height: min(130px, 26vw);
-            background: linear-gradient(145deg, #ff1744, #ff1744);
-            border-radius: 50%;
-        }
-
-        .pulse-heart::before {
-            top: -50%;
-            left: 0;
-        }
-
-        .pulse-heart::after {
-            top: 0;
-            left: 50%;
-        }
-
-        @keyframes doubleBeat {
-            0% { transform: rotate(-45deg) scale(1); filter: brightness(1); box-shadow: 0 10px 30px rgba(255, 30, 80, 0.6); }
-            15% { transform: rotate(-45deg) scale(1.25); filter: brightness(1.4); box-shadow: 0 25px 45px rgba(255, 20, 70, 1); }
-            30% { transform: rotate(-45deg) scale(1.1); filter: brightness(1.2); box-shadow: 0 18px 38px rgba(255, 25, 75, 0.9); }
-            45% { transform: rotate(-45deg) scale(1.2); filter: brightness(1.3); box-shadow: 0 22px 42px rgba(255, 22, 72, 0.95); }
-            60% { transform: rotate(-45deg) scale(1.05); filter: brightness(1.1); box-shadow: 0 15px 35px rgba(255, 28, 78, 0.8); }
-            100% { transform: rotate(-45deg) scale(1); filter: brightness(1); box-shadow: 0 10px 30px rgba(255, 30, 80, 0.6); }
-        }
-
-        .echo-1, .echo-2 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 80, 120, 0.5) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 4;
-            animation: echoPulse 1.2s infinite ease-out;
-        }
-
-        .echo-1 { width: min(180px, 36vw); height: min(180px, 36vw); animation-delay: 0.1s; opacity: 0.5; }
-        .echo-2 { width: min(220px, 44vw); height: min(220px, 44vw); animation-delay: 0.2s; opacity: 0.3; }
-
-        @keyframes echoPulse {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            20% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
-            100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
-        }
-
-        .aura-glow, .aura-glow-2, .aura-glow-3 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .aura-glow {
-            width: min(160px, 32vw); height: min(160px, 32vw);
-            background: radial-gradient(circle, rgba(255, 80, 120, 0.8) 0%, rgba(255, 50, 100, 0.4) 40%, transparent 75%);
-            filter: blur(min(12px, 2.5vw)); z-index: 2;
-            animation: auraPulse 2s infinite alternate;
-        }
-
-        .aura-glow-2 {
-            width: min(220px, 44vw); height: min(220px, 44vw);
-            background: radial-gradient(circle, rgba(255, 120, 150, 0.6) 0%, rgba(255, 70, 110, 0.2) 40%, transparent 80%);
-            filter: blur(min(18px, 3.5vw)); z-index: 1;
-            animation: auraPulse2 2.5s infinite alternate-reverse;
-        }
-
-        .aura-glow-3 {
-            width: min(280px, 56vw); height: min(280px, 56vw);
-            background: radial-gradient(circle, rgba(255, 150, 170, 0.4) 0%, rgba(255, 100, 130, 0.1) 40%, transparent 85%);
-            filter: blur(min(25px, 5vw)); z-index: 0;
-            animation: auraPulse3 3s infinite alternate;
-        }
-
-        @keyframes auraPulse {
-            0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
-            100% { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
-        }
-
-        @keyframes auraPulse2 {
-            0% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.8); }
-            100% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.5); }
-        }
-
-        @keyframes auraPulse3 {
-            0% { opacity: 0.2; transform: translate(-50%, -50%) scale(0.7); }
-            100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.7); }
-        }
-
         /* ===== ФОТОРАМКА ===== */
         .photo-frame {
             width: min(280px, 60vw);
@@ -170,9 +45,9 @@
             box-shadow: 0 min(15px, 3vw) min(25px, 5vw) rgba(220, 100, 120, 0.4), 
                        0 0 0 min(2px, 0.5vw) #ffffff, 
                        0 0 0 min(5px, 1vw) #ffd9e0;
-            margin: min(20px, 4vw) 0;
+            margin: min(20px, 4vw) 0 min(10px, 2vw);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 15;
+            z-index: 5;
             position: relative;
             cursor: pointer;
         }
@@ -193,7 +68,162 @@
             transition: all 0.3s ease;
         }
 
-        /* ===== ГРАДИЕНТНЫЙ ТЕКСТ (ТЕПЕРЬ НАД ТАЙМЕРОМ) ===== */
+        /* ===== ПУЛЬСИРУЮЩЕЕ СЕРДЦЕ С ЭХО (РОВНАЯ ФОРМА) ===== */
+        .heart-container {
+            position: relative;
+            width: min(120px, 25vw);
+            height: min(120px, 25vw);
+            margin: 20px 0 25px 0;
+            cursor: pointer;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ff1744;
+            transform: rotate(45deg);
+            animation: pulse 1.5s ease-in-out infinite;
+            z-index: 55;
+            box-shadow: 0 0 30px rgba(255, 23, 68, 0.5);
+        }
+
+        /* Ровные круглые верхушки */
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ff1744;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -50%;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: -50%;
+        }
+
+        .heart-echo {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ff1744;
+            transform: rotate(45deg);
+            opacity: 0.15;
+            z-index: 52;
+            filter: blur(3px);
+        }
+
+        .heart-echo::before,
+        .heart-echo::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ff1744;
+            border-radius: 50%;
+        }
+
+        .heart-echo::before {
+            top: -50%;
+            left: 0;
+        }
+
+        .heart-echo::after {
+            top: 0;
+            left: -50%;
+        }
+
+        .heart-echo-1 {
+            animation: pulseEcho 1.5s ease-in-out infinite 0.2s;
+            opacity: 0.2;
+        }
+
+        .heart-echo-2 {
+            animation: pulseEcho 1.5s ease-in-out infinite 0.4s;
+            opacity: 0.15;
+        }
+
+        .heart-echo-3 {
+            animation: pulseEcho 1.5s ease-in-out infinite 0.6s;
+            opacity: 0.1;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: rotate(45deg) scale(1);
+                filter: drop-shadow(0 0 5px rgba(255, 23, 68, 0.3));
+            }
+            25% {
+                transform: rotate(45deg) scale(1.2);
+                filter: drop-shadow(0 0 15px rgba(255, 23, 68, 0.6));
+            }
+            50% {
+                transform: rotate(45deg) scale(1.1);
+                filter: drop-shadow(0 0 25px rgba(255, 23, 68, 0.4));
+            }
+            75% {
+                transform: rotate(45deg) scale(1.15);
+                filter: drop-shadow(0 0 20px rgba(255, 23, 68, 0.5));
+            }
+        }
+
+        @keyframes pulseEcho {
+            0%, 100% {
+                transform: rotate(45deg) scale(1.2);
+                opacity: 0;
+            }
+            25% {
+                transform: rotate(45deg) scale(1.5);
+                opacity: 0.2;
+            }
+            50% {
+                transform: rotate(45deg) scale(1.8);
+                opacity: 0.15;
+            }
+            75% {
+                transform: rotate(45deg) scale(2);
+                opacity: 0.1;
+            }
+        }
+
+        /* ===== КНОПКА ТАЙМЕРА ===== */
+        .timer-button {
+            width: min(60px, 12vw);
+            height: min(60px, 12vw);
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 23, 68, 0.3), 
+                       0 0 0 2px #ffffff, 
+                       0 0 0 4px #ffd9e0;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            font-size: min(30px, 6vw);
+            z-index: 30;
+        }
+
+        .timer-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 23, 68, 0.5), 
+                       0 0 0 2px #ffffff, 
+                       0 0 0 5px #ffb3c6;
+        }
+
+        /* ===== ГРАДИЕНТНЫЙ ТЕКСТ ===== */
         .gradient-text {
             text-align: center;
             margin: min(15px, 3vw) 0 min(10px, 2vw);
@@ -202,6 +232,8 @@
             line-height: 1.3;
             text-shadow: 0 0 10px rgba(104, 11, 141, 0.3);
             width: 100%;
+            z-index: 25;
+            position: relative;
         }
 
         .gradient-text p {
@@ -211,11 +243,10 @@
             color: transparent;
             margin: 5px 0;
             position: relative;
-            /* Контур через несколько теней */
             text-shadow: 0 0 12px rgba(236, 23, 255, 0.4);
         }
 
-        /* ===== ТАЙМЕР (УВЕЛИЧЕН) ===== */
+        /* ===== ТАЙМЕР (СКРЫТ ПО УМОЛЧАНИЮ) ===== */
         .timer-container {
             background: #ffffff;
             padding: min(22px, 3vw) min(20px, 2.5vw);
@@ -226,6 +257,13 @@
                        0 0 0 min(5px, 1vw) #ffd9e0;
             width: 70%;
             text-align: center;
+            display: none;
+            z-index: 35;
+            position: relative;
+        }
+
+        .timer-container.visible {
+            display: block;
         }
 
         .timer-title {
@@ -283,6 +321,8 @@
             text-align: center;
             cursor: pointer;
             transition: 0.3s;
+            z-index: 20;
+            position: relative;
         }
 
         .reason-container:hover {
@@ -667,29 +707,30 @@
 <body>
 
     <div class="valentine-wrapper">
-        <!-- СЕРДЦЕ -->
-        <div class="heart-wrapper" id="heartWrapper">
-            <div class="echo-1"></div>
-            <div class="echo-2"></div>
-            <div class="aura-glow"></div>
-            <div class="aura-glow-2"></div>
-            <div class="aura-glow-3"></div>
-            <div class="pulse-heart"></div>
-        </div>
-
         <!-- Фоторамка -->
         <div class="photo-frame" id="photoFrame">
             <div class="photo-placeholder" id="mainPhoto"></div>
         </div>
 
-        <!-- ГРАДИЕНТНЫЙ ТЕКСТ (ТЕПЕРЬ НАД ТАЙМЕРОМ) -->
+        <!-- ПУЛЬСИРУЮЩЕЕ СЕРДЦЕ С ЭХО (РОВНАЯ ФОРМА) -->
+        <div class="heart-container" id="heartContainer">
+            <div class="heart" id="heart"></div>
+            <div class="heart-echo heart-echo-1"></div>
+            <div class="heart-echo heart-echo-2"></div>
+            <div class="heart-echo heart-echo-3"></div>
+        </div>
+
+        <!-- ГРАДИЕНТНЫЙ ТЕКСТ -->
         <div class="gradient-text">
             <p>Моя любовь к тебе растёт</p>
             <p>с каждым ударом сердца.</p>
         </div>
 
-        <!-- ТАЙМЕР ЛЮБВИ (УВЕЛИЧЕН) -->
-        <div class="timer-container">
+        <!-- КНОПКА ТАЙМЕРА -->
+        <div class="timer-button" id="timerButton">⏰</div>
+
+        <!-- ТАЙМЕР ЛЮБВИ (СКРЫТ ПО УМОЛЧАНИЮ) -->
+        <div class="timer-container" id="timerContainer">
             <div class="timer-title">💕 Мы вместе уже:</div>
             <div class="timer-units" id="timerUnits"></div>
         </div>
@@ -760,8 +801,6 @@
     let isDragging = false;
     let startX, startAngle;
     let slides = [];
-    
-    // Для 3 кликов на сердце
     let heartClickCount = 0;
 
     // ===== ЗАГРУЗКА СОХРАНЕННОЙ ФОТОГРАФИИ =====
@@ -834,7 +873,6 @@
         indicator.innerHTML = '';
         slides = [];
 
-        // Адаптивный радиус в зависимости от размера экрана
         const radius = Math.min(220, window.innerWidth * 0.3);
         const centerX = 0;
         const centerY = 0;
@@ -850,7 +888,6 @@
             slide.dataset.angle = angle;
             
             slide.style.transform = `translate(${x}px, ${y}px)`;
-            
             
             const img = document.createElement('img');
             img.src = photo;
@@ -1007,54 +1044,26 @@
         const MAX_HEARTS = 25;
         let activeHearts = [];
         
-        // МАССИВ С ПУТЯМИ К ВАШИМ ИЗОБРАЖЕНИЯМ СЕРДЕЧЕК
-        const heartImages = [
-            'сердце.png'
-        ];
-    
         function createFallingHeart() {
             if (activeHearts.length >= MAX_HEARTS) return;
     
-            // Создаем КОНТЕЙНЕР для падающего сердца
             const heartContainer = document.createElement('div');
             heartContainer.classList.add('falling-heart');
             
-            // Создаем ИЗОБРАЖЕНИЕ
-            const img = document.createElement('img');
+            heartContainer.innerHTML = '❤️';
+            heartContainer.style.fontSize = (Math.floor(Math.random() * 30) + 20) + 'px';
             
-            // Выбираем случайную картинку из массива
-            const randomIndex = Math.floor(Math.random() * heartImages.length);
-            img.src = heartImages[randomIndex];
-            
-            // Стили для изображения
-            img.style.width = '100%';
-            img.style.height = '100%';
-            img.style.objectFit = 'contain';
-            img.style.display = 'block';
-            
-            // Добавляем картинку в контейнер
-            heartContainer.appendChild(img);
-    
-            // Размер сердечка
-            const size = Math.floor(Math.random() * 30) + 20; // 20-50px
-            heartContainer.style.width = size + 'px';
-            heartContainer.style.height = size + 'px';
-            
-            // Позиция по горизонтали
             heartContainer.style.left = Math.random() * 100 + 'vw';
             
-            // Анимация падения
-            const duration = (Math.random() * 5 + 5).toFixed(2); // 5-10 сек
+            const duration = (Math.random() * 5 + 5).toFixed(2);
             heartContainer.style.animationDuration = duration + 's';
             
             const delay = (Math.random() * 3).toFixed(2);
             heartContainer.style.animationDelay = delay + 's';
     
-            // Добавляем на страницу
             document.body.appendChild(heartContainer);
             activeHearts.push(heartContainer);
     
-            // Удаляем после окончания анимации
             heartContainer.addEventListener('animationend', function() {
                 if (heartContainer.parentNode) {
                     heartContainer.parentNode.removeChild(heartContainer);
@@ -1064,10 +1073,8 @@
             });
         }
     
-        // Запускаем падающие сердечки каждые 400мс
         setInterval(createFallingHeart, 400);
         
-        // При загрузке создаём несколько сразу
         window.addEventListener('load', () => {
             for (let i = 0; i < 8; i++) {
                 setTimeout(createFallingHeart, i * 150);
@@ -1077,7 +1084,7 @@
 
     // ===== ИНИЦИАЛИЗАЦИЯ =====
     window.addEventListener('load', () => {
-        loadSavedPhoto(); // Загружаем сохраненное фото
+        loadSavedPhoto();
         updateTimer();
         setInterval(updateTimer, 1000);
         setRandomReason();
@@ -1092,21 +1099,6 @@
     });
 
     // ===== ОБРАБОТЧИКИ =====
-    document.getElementById('heartWrapper').addEventListener('click', function() {
-        heartClickCount++;
-        console.log('Клик по сердцу:', heartClickCount); // Для отладки
-        
-        for (let i = 0; i < 5; i++) {
-            setTimeout(createFallingHeart, i * 70);
-        }
-        
-        if (heartClickCount >= 3) {
-            showBouquet();
-            heartClickCount = 0; // Сбрасываем счетчик после показа
-            console.log('Букет показан!'); // Для отладки
-        }
-    });
-
     document.querySelector('.reason-container').addEventListener('click', setRandomReason);
 
     const photoFrame = document.getElementById('photoFrame');
@@ -1135,7 +1127,7 @@
         const index = rawIndex % PHOTOS.length;
         
         setMainPhoto(index);
-        saveSelectedPhoto(index); // Сохраняем выбранное фото
+        saveSelectedPhoto(index);
         galleryModal.style.display = 'none';
     });
 
@@ -1150,6 +1142,24 @@
         if (e.target === bouquetOverlay) {
             bouquetOverlay.style.display = 'none';
         }
+    });
+
+    // ===== ОБРАБОТЧИК ДЛЯ СЕРДЦА =====
+    const heartContainer = document.getElementById('heartContainer');
+    heartContainer.addEventListener('click', () => {
+        heartClickCount++;
+        if (heartClickCount >= 3) {
+            showBouquet();
+            heartClickCount = 0;
+        }
+    });
+
+    // ===== ОБРАБОТЧИК ДЛЯ КНОПКИ ТАЙМЕРА =====
+    const timerButton = document.getElementById('timerButton');
+    const timerContainer = document.getElementById('timerContainer');
+    
+    timerButton.addEventListener('click', () => {
+        timerContainer.classList.toggle('visible');
     });
 })();
     </script>
