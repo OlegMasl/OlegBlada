@@ -827,6 +827,13 @@
     let slides = [];
     let heartClickCount = 0;
 
+    // ===== ФУНКЦИЯ ДЛЯ ВИБРАЦИИ =====
+    function vibrate(pattern) {
+        if (window.navigator && window.navigator.vibrate) {
+            window.navigator.vibrate(pattern);
+        }
+    }
+
     // ===== ЗАГРУЗКА СОХРАНЕННОЙ ФОТОГРАФИИ =====
     function loadSavedPhoto() {
         const savedIndex = localStorage.getItem('selectedPhotoIndex');
@@ -886,6 +893,9 @@
     function showBouquet() {
         const overlay = document.getElementById('bouquetOverlay');
         overlay.style.display = 'flex';
+        
+        // Вызываем вибрацию при появлении букета
+        vibrate([200, 100, 200]); // Паттерн: вибрация 200мс, пауза 100мс, вибрация 200мс
     }
 
     // ===== ФУНКЦИЯ ДЛЯ ОБНОВЛЕНИЯ ПОДСВЕТКИ ВЫБРАННОГО СЛАЙДА =====
